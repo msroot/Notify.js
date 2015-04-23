@@ -43,20 +43,20 @@ NotifyX = function(element) {
 
 
 
-Notify("Can't Touch This");
-Notify("Stop! Hammer time", null, null, 'danger');
-
-Notify(
-	"I told you homeboy (You can't touch this)",
-	function () { alert("clicked notification")},
-	function () { alert("clicked x")},
-	'info'
-);
-
-
-Notify(
-	"I told you homeboy (You can't touch this)",
-	function () { alert("clicked notification")},
-	function () { alert("clicked x")},
-	'success'
-);
+// Notify("Can't Touch This");
+// Notify("Stop! Hammer time", null, null, 'danger');
+//
+// Notify(
+// 	"I told you homeboy (You can't touch this)",
+// 	function () { alert("clicked notification")},
+// 	function () { alert("clicked x")},
+// 	'info'
+// );
+//
+//
+// Notify(
+// 	"I told you homeboy (You can't touch this)",
+// 	function () { alert("clicked notification")},
+// 	function () { alert("clicked x")},
+// 	'success'
+// );

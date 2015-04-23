@@ -6,7 +6,7 @@ Notify = function(text, callback, close_callback, style) {
  
 	if (typeof style == 'undefined' ) style = 'warning'
   
-		var html = $('<div class="alert alert-' + style + '  hide">' + icon +  " " + text + '</div>');
+	var html = $('<div class="alert alert-' + style + '  hide">' + icon +  " " + text + '</div>');
   
 	$('<a>',{
 		text: '×',
@@ -16,21 +16,17 @@ Notify = function(text, callback, close_callback, style) {
 		click: function(e){
 			e.preventDefault()
 			close_callback && close_callback()
-			NotifyX(html)
+			remove_notice()
 		}
 	}).prependTo(html)
 
 	$container.prepend(html)
 	html.removeClass('hide').hide().fadeIn('slow')
-  
-	html.on('click', function () {
-		callback && callback()
-		NotifyX(html)
-	});
 
 	function remove_notice() {
-		NotifyX(html)
+		html.stop().fadeOut('slow').remove()
 	}
+	
 	var timer =  setInterval(remove_notice, time);
 
 	$(html).hover(function(){
@@ -38,15 +34,12 @@ Notify = function(text, callback, close_callback, style) {
 	}, function(){
 		timer = setInterval(remove_notice, time);
 	});
+	
+	html.on('click', function () {
+		clearInterval(timer)
+		callback && callback()
+		remove_notice()
+	});
   
   
-}
-
-NotifyX = function(element) {
-	if (typeof element !== "undefined" ) {
-		element.stop().fadeOut("slow").remove();
-	} else {
-		var last = $('#notifications').children('.alert').last()
-		last.stop().fadeOut("slow").remove();
-	}
 }

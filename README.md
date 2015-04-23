@@ -1,9 +1,10 @@
 # Notify.js
 
-<img src="https://raw.githubusercontent.com/msroot/Notify.js/master/screen_shot.png" align="center" height="300" width="336" style="text-align:center">
+<img src="https://raw.githubusercontent.com/msroot/Notify.js/master/screen_shot.png" align="center" height="336" width="300" style="text-align:center">
 
 
 A very simple notification system using jQuery and Bootstrap able to use callbacks
+
 To make it work add a `#notifications` div to your app and style it
 
 ### example:
@@ -24,23 +25,27 @@ To make it work add a `#notifications` div to your app and style it
 
 # Params
 `:text` the text to be displayed
+
 `:callback`: callback when the user clicks the notification
+
 `:close_callback`: callback for x button
-`:style`: danger, warning, info, success (default is warning)
+
+`:style`: `danger`, `warning`, `info`, `success` (default is `warning`)
+
 
 ```js
-	Notify(text, callback, close_callback, style) 
+Notify(text, callback, close_callback, style) 
 ```
 	
 ## Usage
 a simple notification
 
 ```js
-	Notify("Can't Touch This");
+Notify("Can't Touch This");
 ```
 
 
-Notify a 'danger' style message
+Notify a `:danger` style message
 
 ```js
 Notify("Stop! Hammer time", null, null, 'danger');
@@ -51,13 +56,18 @@ Using callbacks
 ```js
 Notify(
 	"I told you homeboy (You can't touch this)",
-	function () { alert("clicked notification")},
-	function () { alert("clicked x")}
+	function () { 
+		alert("clicked notification")
+	},
+	function () { 
+		alert("clicked x")
+	}
 );
 ```
 
 ## Why?
 Because I need a simple library with callbacks and everything its tooooo complicated
+
 inspired by [ohSnap]( https://github.com/justindomingue/ohSnap )
 
 ## Who?

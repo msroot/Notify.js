@@ -21,6 +21,17 @@
 
 <style type="text/css" media="screen">
 
+#notifications {
+	cursor: pointer;
+	position: fixed;
+	right: 0px;
+	z-index: 9999;
+	bottom: 0px;
+	margin-bottom: 22px;
+	margin-right: 15px;
+	max-width: 300px;   
+}
+
 .container {
 	width: 950px;
 }
@@ -31,7 +42,7 @@
 	padding: 40px 15px;
 	margin-top:10px;
 }
-  
+
 .gist{
 	width: 600px;
 	margin: auto;
@@ -41,20 +52,21 @@ html,body{
 	background: #D2D3D7;
 }
 .logo{
-	font-size: 150px;
-}
-h1 {  
-
 	font-family: 'Lobster', Georgia, Times, serif;
-	font-size: 54px;
-	text-align:center; 
-	text-shadow: 3px 3px 0px #2c2e38, 5px 5px 0px #5c5f72;
-	color: #fff;
+	font-size: 150px;
 	text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
-
 }
 
-  
+h1 {  
+	font-size: 40px;
+	text-align:center; 
+
+	color: #fff;
+
+	text-shadow: 2px 2px 0px #737373, 2px 2px 0px #737373;
+}
+
+
   
   
 </style>
@@ -67,7 +79,7 @@ h1 {
 
   <body>
 
-
+<div id="notifications"></div>
     <div class="container">
 
       <div class="starter-template">
@@ -91,18 +103,29 @@ download
 				<br /><br />
 				<hr />
 			<h1>Simple Notifications</h1>
-			<button type="button" class="btn btn-success btn-lg btn-block">success</button>
-			<button type="button" class="btn btn-info btn-lg btn-block">info</button>
-			<button type="button" class="btn btn-warning btn-lg btn-block">warning</button>
-			<button type="button" class="btn btn-danger btn-lg btn-block">danger</button>
+			<button type="button" class="success btn btn-success btn-lg btn-block">success</button>
+			<button type="button" class="info btn btn-info btn-lg btn-block">info</button>
+			<button type="button" class="warning btn btn-warning btn-lg btn-block">warning</button>
+			<button type="button" class="danger btn btn-danger btn-lg btn-block">danger</button>
+			
+
 			
 			<br /><br />
 			<h1>Notifications with callbacks</h1>
-			<button type="button" class="btn btn-default btn-lg btn-block">with callbacks</button>
-			<button type="button" class="btn btn-success btn-lg btn-block">and styles</button>
+			<button type="button" class="callback btn btn-default btn-lg btn-block">with callbacks</button>
+			<button type="button" class="callback-success btn btn-success btn-lg btn-block">and styles</button>
 			<hr />
 			<br />
 			<h1>Usage</h1>
+			
+			<div class="alert alert-success">Create a notifications div </div>
+			<script src="https://gist.github.com/msroot/ddedf89afaadd4d60ce5.js"></script>
+			
+			<div class="alert alert-success">Add style</div>
+			<script src="https://gist.github.com/msroot/2d40ac1f4a795a01142f.js"></script>
+			
+			<div class="alert alert-success">Load jQuery and Bootstrap and use it</div>
+			
 				<script src="https://gist.github.com/msroot/8094684ff6f57a0fcfa2.js"></script>
 				
 				
@@ -123,36 +146,46 @@ download
     <!-- Placed at the end of the document so the pages load faster -->
 	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="https://raw.githubusercontent.com/msroot/Notify.js/master/Notify.js"></script>	
+	<script src="https://rawgit.com/msroot/Notify.js/master/Notify.js"></script>	
+	
 	
 	<script type="text/javascript">
 	$( document ).ready(function() {
+		$.each(['danger', 'warning', 'info', 'success'], function (i, type) {
+			$('.' + type).on('click', function () {
+				Notify("Stop! Hammer time", null, null, type);
+			})
+		})
+		
+		
+		$('.callback').on('click', function () {
+			Notify(
+			    "I told you homeboy (You can't touch this)",
+			    function () { 
+			        alert("clicked notification")
+			    },
+			    function () { 
+			        alert("clicked x")
+			    }
+			);
+		})
+		
+		
+		$('.callback-success').on('click', function () {
+			Notify(
+			    "I told you homeboy (You can't touch this)",
+			    function () { 
+			        alert("clicked notification")
+			    },
+			    function () { 
+			        alert("clicked x")
+			    },
+				'success'
+			);
+		})
 		
 		Notify("Can't Touch This");
 		Notify("Stop! Hammer time", null, null, 'danger');
-
-		Notify(
-			"I told you homeboy (You can't touch this)",
-			function () { 
-				alert("clicked notification")
-			},
-			function () { 
-				alert("clicked x")
-			},
-			'info'
-		);
-
-
-		Notify(
-			"I told you homeboy (You can't touch this)",
-			function () { 
-				alert("clicked notification")
-			},
-			function () { 
-				alert("clicked x")
-			},
-			'success'
-		);
 	});
 	</script>
   </body>

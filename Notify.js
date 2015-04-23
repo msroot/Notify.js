@@ -11,7 +11,6 @@ Notify = function(text, callback, close_callback, style) {
   $('<a>',{
 	  text: '×',
 	  class: 'button close',
-	  style: 'opacity: 1',
 	  href: '#',
 	  click: function(e){
 		  e.preventDefault()

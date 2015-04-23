@@ -1,7 +1,7 @@
 # Notify.js
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/msroot/Notify.js/master/screen_shot.png" align="center" height="336" width="300" style="text-align:center">
+<img src="http://msroot.github.io/Notify.js/screen_shot.png" align="center" height="336" width="300" style="text-align:center">
 </p>
 
 A very simple notification system using jQuery and Bootstrap able to use callbacks

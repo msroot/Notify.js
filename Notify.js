@@ -1,6 +1,6 @@
 Notify = function(text, callback, close_callback, style) {
 
-  var time = '5000';
+  var time = '10000';
   var $container = $('#notifications');
   var icon = '<i class="fa fa-info-circle "></i>';
  
@@ -29,34 +29,15 @@ Notify = function(text, callback, close_callback, style) {
   });
 
   setTimeout(function () {
-    NotifyX($container.children('.alert').first());
+    NotifyX(html);
   }, time);
 }
 
 NotifyX = function(element) {
   if (typeof element !== "undefined" ) {
-    element.remove();
+	element.stop().fadeOut("slow").remove();
   } else {
-	  $('#notifications .alert').stop().fadeOut("slow").remove();
+	  var last = $('#notifications').children('.alert').last()
+	  last.stop().fadeOut("slow").remove();
   }
 }
-
-
-
-// Notify("Can't Touch This");
-// Notify("Stop! Hammer time", null, null, 'danger');
-//
-// Notify(
-// 	"I told you homeboy (You can't touch this)",
-// 	function () { alert("clicked notification")},
-// 	function () { alert("clicked x")},
-// 	'info'
-// );
-//
-//
-// Notify(
-// 	"I told you homeboy (You can't touch this)",
-// 	function () { alert("clicked notification")},
-// 	function () { alert("clicked x")},
-// 	'success'
-// );

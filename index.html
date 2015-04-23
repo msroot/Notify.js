@@ -8,30 +8,53 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="Yannis Kolovos">
-    <meta property="og:image" content="https://raw.githubusercontent.com/msroot/Notify.js/master/screen_shot.png"/>
-    <meta property="og:title" content="Notify.js examples" />
-    <meta property="og:description" content="A very simple notification system using jQuery and Bootstrap able to use callbacks" />
-    <meta property="article:author" content="https://www.facebook.com/johnny.k.sunny" />
+	    <meta property="og:image" content="https://raw.githubusercontent.com/msroot/Notify.js/master/screen_shot.png"/>
+	    <meta property="og:title" content="Notify.js examples" />
+	    <meta property="og:description" content="A very simple notification library using jQuery and Bootstrap able to use callbacks" />
+	    <meta property="article:author" content="https://www.facebook.com/johnny.k.sunny" />
     
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:creator:id" content="@yannis_kolovos" />
-    <meta name="twitter:title" content="Notify.js examples" />
-    <meta name="twitter:description" content="A very simple notification system using jQuery and Bootstrap able to use callbacks" />
-    <meta name="twitter:image" content="http://raw.githubusercontent.com/msroot/Notify.js/master/screen_shot.png" />
-    	
+	    <meta name="twitter:card" content="summary" />
+	    <meta name="twitter:creator:id" content="@yannis_kolovos" />
+	    <meta name="twitter:title" content="Notify.js examples" />
+	    <meta name="twitter:description" content="A very simple notification library using jQuery and Bootstrap able to use callbacks" />
+	    <meta name="twitter:image" content="http://raw.githubusercontent.com/msroot/Notify.js/master/screen_shot.png" />
 
     <title>Notify.js examples</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
 	<link href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
 
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 <style type="text/css" media="screen">
 
+html,body{
+	font-family: 'Cabin', Helvetica, Arial, sans-serif;
+	background: #D2D3D7;
+}
+
+.bell {font-size:300px;}
+
+h1 {  
+	font-size: 40px;
+	text-align:center; 
+	color: #fff;
+	text-shadow: 2px 2px 0px #737373, 2px 2px 0px #737373;
+}
+
+.logo{
+	font-family: 'Lato', sans-serif;
+	font-size: 150px;
+	text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+}
+
+
+.center{
+	text-align:center;
+}
 #notifications {
 	cursor: pointer;
 	position: fixed;
@@ -48,33 +71,17 @@
 }
 .lead{
 	text-align:center;
+    color: rgb(131, 131, 131);
+    font-size: 17px;
 }
 .starter-template{
 	padding: 40px 15px;
-	margin-top:10px;
+	  padding-top: 0px;
 }
 
-.gist{
+.notify_js{
 	width: 600px;
 	margin: auto;
-}
-html,body{
-	font-family: 'Cabin', Helvetica, Arial, sans-serif;
-	background: #D2D3D7;
-}
-.logo{
-	font-family: 'Lobster', Georgia, Times, serif;
-	font-size: 150px;
-	text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
-}
-
-h1 {  
-	font-size: 40px;
-	text-align:center; 
-
-	color: #fff;
-
-	text-shadow: 2px 2px 0px #737373, 2px 2px 0px #737373;
 }
 
 
@@ -94,25 +101,28 @@ h1 {
     <div class="container">
 
       <div class="starter-template">
-        <h1 class="logo">Notify.js</h1>
-		<br />
-        <p class="lead">
-			A very simple notification system using jQuery and Bootstrap able to use callbacks
-		</p>
-			<div class="gist">
+        <div class="notify_js">
+		<h1 class="logo"><i class="fa fa-bell-o bell"></i>Notify.js </h1>
+        
+			
+				<br /><hr />
+				<p class="lead">
+					A very simple notification library using jQuery and Bootstrap able to use callbacks
+				</p>
 				
-<a class="btn btn-default btn-lg btn-block" href="https://github.com/msroot/Notify.js/">
-<i class="fa fa-github"></i>
-view on github</a>
-<a class="btn btn-default btn-lg btn-block" href="https://github.com/msroot/Notify.js/raw/master/Notify.js">
-<i class="fa fa-arrow-circle-down"></i>
-download
-</a>
-					
-					
-					
 				<br /><br />
-				<hr />
+				<a class="btn btn-default btn-lg btn-block" href="https://github.com/msroot/Notify.js/">
+					<i class="fa fa-github"></i>
+					view on github</a>
+					<a class="btn btn-default btn-lg btn-block" href="https://github.com/msroot/Notify.js/raw/master/Notify.js">
+						<i class="fa fa-arrow-circle-down"></i>
+						download
+					</a>
+					
+					
+					
+				<br /><br /><hr />
+				
 			<h1>Simple Notifications</h1>
 			<button type="button" class="success btn btn-success btn-lg btn-block">success</button>
 			<button type="button" class="info btn btn-info btn-lg btn-block">info</button>
@@ -125,7 +135,7 @@ download
 			<h1>Notifications with callbacks</h1>
 			<button type="button" class="callback btn btn-default btn-lg btn-block">with callbacks</button>
 			<button type="button" class="callback-success btn btn-success btn-lg btn-block">and styles</button>
-			<hr />
+			<br />
 			<br />
 			<h1>Usage</h1>
 			
@@ -139,11 +149,18 @@ download
 			
 				<script src="https://gist.github.com/msroot/8094684ff6f57a0fcfa2.js"></script>
 				
-				
-				<p>Made by <a href="https://twitter.com/yannis_kolovos">yannis_kolovos</a>
+					<hr />
+				<p class="center">Made by 
+					<a href="https://twitter.com/yannis_kolovos">yannis_kolovos</a>
 				View on <i class="fa fa-github"></i>
 				<a href="https://github.com/msroot/Notify.js/">github</a>
-			</p>
+				</p>
+				<p class="center">Using 
+					<a href="https://jquery.com/">jQuery</a>, 
+					<a href="http://fortawesome.github.io/Font-Awesome/">Font-Awesome</a> and 
+					<a href="http://getbootstrap.com/">Bootstrap</a>
+					</p>
+			
 			
 				</div>
 			

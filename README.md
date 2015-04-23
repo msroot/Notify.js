@@ -5,9 +5,10 @@
 
 A very simple notification system using jQuery and Bootstrap able to use callbacks
 
-To make it work add a `#notifications` div to your app and style it
+### Demo:
+View online [Demo]( http://msroot.github.io/Notify.js/ )
 
-### example:
+To make it work add a `#notifications` div to your app and style it
 
 ```css
 #notifications {

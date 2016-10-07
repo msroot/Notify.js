@@ -1,8 +1,13 @@
 # Notify.js
 
+
 <p align="center">
 <img src="http://msroot.github.io/Notify.js/screen_shot.png" align="center" height="336" width="300" style="text-align:center">
 </p>
+
+
+### Install via bower
+`bower info notify-js`
 
 A very simple notification system using jQuery and Bootstrap able to use callbacks
 

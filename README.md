@@ -7,7 +7,7 @@
 
 
 ### Install via bower
-`bower info notify-js`
+`bower install notify-js`
 
 A very simple notification system using jQuery and Bootstrap able to use callbacks
 

@@ -1,6 +1,5 @@
-Notify = function(text, callback, close_callback, style) {
+Notify = function(text, callback, close_callback, style, time = 10000) {
 
-	var time = '10000';
 	var $container = $('#notifications');
 	var icon = '<i class="fa fa-info-circle "></i>';
  
